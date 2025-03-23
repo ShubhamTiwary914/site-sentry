@@ -10,7 +10,7 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
+    --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -22,7 +22,7 @@
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    --ring: 222.2 84% 4.9%;
     --radius: 0.5rem;
   }
 
@@ -51,9 +51,50 @@
 
 @layer base {
   * {
-    @apply border-[hsl(var(--border))];
+    @apply border-border;
   }
   body {
-    @apply bg-background text-foreground min-h-screen;
+    @apply bg-background text-foreground;
   }
+}
+
+/* Prose styles for better typography */
+.prose {
+  @apply text-gray-600;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  @apply text-gray-900 font-semibold mt-8 mb-4;
+}
+
+.prose h1 {
+  @apply text-4xl;
+}
+
+.prose h2 {
+  @apply text-3xl;
+}
+
+.prose h3 {
+  @apply text-xl;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose ul {
+  @apply mb-4 list-disc pl-5 space-y-2;
+}
+
+.prose li {
+  @apply leading-relaxed;
+}
+
+.prose strong {
+  @apply text-gray-900 font-semibold;
+}
+
+.prose a {
+  @apply text-blue-600 hover:text-blue-800 underline;
 } 
